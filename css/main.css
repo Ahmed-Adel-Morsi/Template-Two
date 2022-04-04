@@ -1,0 +1,331 @@
+/* Start Global Rules  */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --main-color: #19c8fa;
+    --sec-color: green;
+    --main-padding: 10px;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* Small  */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium  */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large  */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* End Global Rules  */
+header {
+    height: 100vh;
+    position: relative;
+}
+header::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/landing.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.4);
+    z-index: -1;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+header .container::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 1px;
+    background-color: #999;
+    bottom: 0;
+}
+header .container a img {
+    height: 40px;
+}
+header .right-side {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-size: 14px;
+}
+header .dropdown {
+    margin-right: 50px;
+}
+header .dropdown ul {
+    display: flex;
+    flex-wrap: nowrap;
+}
+header .dropdown ul li a {
+    padding: 40px 10px;
+    display: block;
+    color: white;
+    position: relative;
+    transition: 0.3s ease;
+}
+header .dropdown ul li a:hover {
+    color: var(--main-color);
+}
+header ul li {
+    position: relative;
+}
+header .dropdown ul li a:hover::after,
+header ul li:first-child a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: var(--main-color);
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+header .dropdown-icon {
+    display: none;
+    color: white;
+    padding: 35px 50px 35px 10px;
+    font-size: 22px;
+}
+header .dropdown-icon:hover .mobile-dropdown {
+    display: flex;
+}
+header .mobile-dropdown {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    width: 100%;
+    z-index: 5;
+}
+header .mobile-dropdown ul {
+    width: 100%;
+    position: relative;
+    font-size: 14px;
+}
+header .mobile-dropdown ul::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    opacity: 50%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+header .mobile-dropdown ul a {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    color: white;
+}
+header .right-side .search-icon {
+    color: white;
+    font-size: 20px;
+    position: relative;
+}
+header .right-side .search-icon::after {
+    content: "";
+    position: absolute;
+    height: 140%;
+    top: -20%;
+    left: -20px;
+    width: 1px;
+    background-color: white;
+}
+header .header-content {
+    width: 50%;
+    position: absolute;
+    color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: flex-end;
+}
+header .header-content::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(15 116 143);
+    top: 0;
+    z-index: -1;
+    opacity: 70%;
+}
+header .header-content .header-text {
+    max-width: 600px;
+    padding: 50px;
+}
+header .header-content h2 {
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+header .header-content p {
+    line-height: 2;
+    font-size: 14px;
+}
+header .slider {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 35px;
+    color: white;
+    font-size: 30px;
+}
+header .slider-dots {
+    display: flex;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+header .slider-dots span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-left: 10px;
+}
+header .slider-dots span:nth-child(2) {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+header ul li:first-child a {
+    color: var(--main-color);
+}
+@media (max-width: 767px) {
+    header .dropdown {
+        display: none;
+    }
+    header .header-content {
+        width: 100%;
+    }
+    header .dropdown-icon {
+        display: block;
+    }
+    header .slider {
+        display: none;
+    }
+}
+/* section  */
+section .sec {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+section .address-info {
+    text-align: center;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+section .address-info h2 {
+    font-size: 40px;
+    font-weight: 400;
+    padding-bottom: 30px;
+    position: relative;
+}
+section .address-info h2::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    background-color: #1f2021;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+section .address-info h2::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border: 2px solid #1f2021;
+    border-radius: 50%;
+    bottom: -9.5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+section .address-info p {
+    color: #777;
+    padding: 40px 0 80px;
+    line-height: 2;
+}
+ /* services section  */
+.services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(450px , 1fr));
+    gap: 40px;
+}
+.services-content .card {
+    display: flex;
+}
+.services-content .card i{
+    margin-right: 40px;
+    font-size: 45px;
+}
+.services-content .card .card-text h3 {
+    color: var(--main-color);
+    margin-bottom: 30px;
+}
+.services-content .card .card-text p {
+    line-height: 2;
+    color: #777;
+}
+@media (max-width:767px) {
+    .services-content {
+        grid-template-columns: repeat(auto-fit , minmax(350px , 1fr));
+    }
+    .services-content .card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .services-content .card i{
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+}
