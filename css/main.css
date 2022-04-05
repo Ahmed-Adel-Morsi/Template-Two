@@ -747,8 +747,61 @@ section .phone-ad::after {
     font-size: 30px;
 }
 /* pricing section  */
+#pricing .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(250px , 1fr));
+    gap: 30px;
+    text-align: center;
+}
+#pricing .plans .plan {
+    background-color: rgb(252 252 252);
+}
+#pricing .plans .plan>div {
+    border-top: 1px solid var(--main-color);
+    line-height: 1.8;
+}
+#pricing .plans .plan>div:not(:nth-child(2)) {
+    padding: 25px;
+}
+#pricing .plans .plan h3 {
+    font-weight: 400;
+}
+#pricing .plans .plan div:first-of-type p {
+    font-size: 60px;
+    font-weight: 700;
+}
+#pricing .plans .plan div:first-of-type p sup {
+    font-weight: normal;
+    font-size: 25px;
+    top: -1.5em;
+}
+#pricing .plans .plan div:first-of-type p sub {
+    font-size: 20px;
+}
+#pricing .plans .plan button {
+    padding: 20px;
+    border: 1px solid var(--main-color);
+    background-color: transparent;
+}
+#pricing .plans .plan div:nth-of-type(2) p {
+    padding: 15px;
+}
+#pricing .plans .plan div:nth-of-type(2) p:not(:last-child) {
+    position: relative;
+}
+#pricing .plans .plan div:nth-of-type(2) p:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 150px;
+    height: 1px;
+    transform: translateX(-50%);
+    background-color: var(--main-color);
+}
 #pricing .contact-info {
     text-align: center;
+    margin-top: 60px;
 }
 #pricing .contact-info p {
     margin-bottom: 20px;
@@ -760,4 +813,185 @@ section .phone-ad::after {
     color: white;
     padding: 15px 30px;
     cursor: pointer;
+}
+section .subscribe {
+    position: relative;
+}
+section .subscribe::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../images/subscribe.jpg");
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(0.5);
+}
+section .subscribe .subscribe-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    color: white;
+    line-height: 1.8;
+}
+@media (max-width: 1199px) {
+    section .subscribe .subscribe-info {
+        grid-template-columns: 1fr;
+    }
+    section .subscribe .subscribe-info p {
+        text-align: center;
+    }
+}
+section .subscribe .subscribe-info input {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid white;
+    outline: none;
+    padding: 20px;
+    color: white;
+    padding-left: 50px;
+}
+section .subscribe .subscribe-info .search-input {
+    position: relative;
+}
+section .subscribe .subscribe-info .search-input::after {
+    content: "SUBSCRIBE";
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    width: 130px;
+    height: calc(100% - 2px);
+    background-color: var(--main-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+section .subscribe .subscribe-info .search-input::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0e0";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 400;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+section .subscribe .subscribe-info ::placeholder {
+    color: white;
+}
+/* contact Section  */
+#contact .contact-us-info {
+    display: grid;
+    grid-template-columns: repeat(5 , 1fr);
+    gap: 30px;
+}
+#contact .contact-us-info .message {
+    grid-column: 1 / span 4;
+}
+#contact .contact-us-info .message form {
+    display: flex;
+    flex-direction: column;
+}
+#contact .contact-us-info .message input[type="text"] ,
+#contact .contact-us-info .message input[type="email"] ,
+#contact .contact-us-info .message textarea {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #dedadc;
+    outline: none;
+}
+#contact .contact-us-info .message textarea {
+    min-height: 150px;
+    resize: none;
+}
+#contact .contact-us-info .message input[type="submit"] {
+    padding: 20px 25px;
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+    align-self: flex-end;
+    cursor: pointer;
+}
+#contact .contact-us-info .our-address h4 {
+    margin-bottom: 30px;
+    font-weight: normal;
+    font-size: 18px;
+}
+#contact .contact-us-info .our-address p {
+    color: #777;
+    line-height: 1.8;
+}
+#contact .contact-us-info .our-address>div:first-child {
+    margin-bottom: 50px;
+}
+#contact .contact-us-info .our-address .address p {
+    font-style: italic;
+}
+@media (max-width: 999px) {
+    #contact .contact-us-info {
+        grid-template-columns: 1fr;
+    }
+    #contact .contact-us-info .our-address {
+        order: 1;
+        text-align: center;
+        grid-column: unset;
+    }
+    #contact .contact-us-info .message {
+        order: 2;
+        grid-column: unset;
+    }
+}
+/* footer  */
+footer .footer-img {
+    color: white;
+    position: relative;
+    padding: 60px 0;
+}
+footer .footer-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../images/subscribe.jpg");
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(0.3);
+}
+footer .footer-content {
+    text-align: center;
+}
+footer .footer-content div:first-of-type span {
+    width: 200px;
+    background-color: white;
+    height: 1px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+footer .footer-content>div {
+    margin: 50px 0;
+    position: relative;
+    font-size: 22px;
+}
+footer .footer-content>div i {
+    font-size: 15px;
+    padding: 15px;
+}
+footer .footer-content .icons {
+    padding-top: 20px;
+}
+footer .footer-content>div p {
+    padding-bottom: 20px;
+}
+footer .footer-content>p span{
+    color: var(--main-color);
+    font-weight: 700;
 }
