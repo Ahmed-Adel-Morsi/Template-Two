@@ -469,7 +469,6 @@ section .phone-ad::after {
     color: white;
     border: none;
     padding: 15px 20px;
-    cursor: pointer;
 }
 #portfolio .video-sec {
     position: relative;
@@ -510,7 +509,6 @@ section .phone-ad::after {
     color: white;
     border: none;
     padding: 10px 20px;
-    cursor: pointer;
 }
 /* About Section  */
 #about .sec-one  {
@@ -812,7 +810,6 @@ section .phone-ad::after {
     background-color: var(--main-color);
     color: white;
     padding: 15px 30px;
-    cursor: pointer;
 }
 section .subscribe {
     position: relative;
@@ -994,4 +991,7 @@ footer .footer-content>div p {
 footer .footer-content>p span{
     color: var(--main-color);
     font-weight: 700;
+}
+button {
+    cursor: pointer;
 }
