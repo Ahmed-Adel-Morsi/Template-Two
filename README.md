@@ -79,9 +79,6 @@ body {
 
 Feel free to contribute to Template-Two by submitting pull requests. Your contributions are highly welcome!
 
-## License
-
-This project is licensed under the [MIT License](LICENSE). Use, modify, and distribute it for personal or commercial projects.
 
 ---
 
